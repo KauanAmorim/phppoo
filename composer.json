@@ -1,0 +1,17 @@
+{
+    "name": "phppoo",
+    "description": "This is a personal student project",
+    "authors": [{
+        "name": "Kauan Amorim da Silva",
+        "email": "kauanamorim88@gmail.com"
+    }],
+    "require": {
+        "php": ">= 5.6",
+        "kauan/database": "dev-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "tdg\\": "classes/tdg"
+        }
+    }
+}

@@ -1,0 +1,56 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "f7b95e71d758b044c90fb5d43c663ba0",
+    "packages": [
+        {
+            "name": "kauan/database",
+            "version": "dev-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KauanAmorim/database_connect.git",
+                "reference": "3f1b285cd45769d0aa54f746007dcda3210934de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KauanAmorim/database_connect/zipball/3f1b285cd45769d0aa54f746007dcda3210934de",
+                "reference": "3f1b285cd45769d0aa54f746007dcda3210934de",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "connection\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kauan Amorim",
+                    "email": "kauanamorim88@gmail.com"
+                }
+            ],
+            "description": "personal lib to connect with database",
+            "time": "2020-07-09T00:16:30+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "kauan/database": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">= 5.6"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+}

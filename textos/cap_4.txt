@@ -1,0 +1,14 @@
+Introdução
+
+Os bancos de dados surgiram na década de 1970, 
+com o padrão de desenvolvimento procedural.
+
+ORM - Mapeamento Objeto-relacional 
+-> Isso ajuda na persistencia de armazenamento de objetos em banco
+banco de dados relacionais.
+
+Os objetos trabalham com ponteiros (links) de relacionamento entre eles,
+banco de dados usam chaves primarias e estrangeiras.
+
+-------------------------------------------------------------------------------
+

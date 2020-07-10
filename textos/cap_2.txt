@@ -1,0 +1,63 @@
+Atributos e metodos estáticos
+-> Onde, quando e como usar.
+
+Atributo estático é um estado que vive na classe. 
+Por conta disso, sempre que você cria um novo objeto dessa classe, 
+eles possuem o mesmo valor para o atributo. Geralmente é usado para constantes.
+
+Método estático também é um método que vive na classe. 
+Então é um método que não pode usar nenhum atributo do objeto e 
+geralmente é usado para fazer operações que não dependem de nenhum estado. 
+Métodos utilitários são os mais comuns.. os famosos helpers.
+
+--- Abaixo terá uma explicação mais relevante ---
+Você usa static quando um método não depende da instância da classe onde ele 
+foi declarado ou usa static em um atributo quando ele deve ser o mesmo para todas as instâncias da classe.
+
+---------------------------
+
+Composição e Agregação
+-> Como usar isso ao meu favor para 
+ter um código melhor.
+
+---------------------------
+
+Estruturar dados de uma página em 
+um objeto da própria página.
+
+---------------------------
+
+get_class_methods
+-> irá trazer todos os métodos definidos em uma classe.
+-> Vai ajudar na hora de usar e 
+fazer manutenção de uma classe/objeto.
+
+---------------------------
+
+get_object_vars
+-> irá trazers todos os atributos publicos
+de uma classe.
+
+---------------------------
+
+call_user_func
+-> executa um método ou função passado por um 
+parâmetro e apartir desse parâmetro.
+->pode ser usado como função normal, anônima e método de um objeto.
+
+---------------------------
+
+Entender melhor sobre interfaces e 
+como isso me ajudará na comunicação de objetos
+em agregação e Composição.
+
+---------------------------
+
+facade para bibliotecas de terceiros
+
+---------------------------
+
+adapter para centralizar uso de funcionalidades dos
+objetos de classes externas para uma melhor manutenção
+
+---------------------------

@@ -1,0 +1,18 @@
+Usar agregação e usar interfaces para ter uma comunicação entre objetos direta
+é uma boa ideia, isso ajudaá na hora de fazer uma manutenção além de estruturar e organizar
+o código bem melhor do que eu estou fazendo atualmente.
+
+Além disso usar o adapter para funcionalidades que usam objetos externos.
+
+Pensar bem qual a melhor forma de usar composição e agregação no código. É bom pesquisar sobre.
+
+Toda página deverá ter uma classe que manipula e deixa os dados prontos para uso, será melhor para
+organizar o código e usar em outros locais.
+
+usar facade para criar libs de libs de terceiros.
+
+usar adapter para uma melhor manutenção do código.
+
+
+
+

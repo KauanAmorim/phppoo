@@ -1,0 +1,165 @@
+-------------------------------------------------------------------------------
+
+3.1
+Tratamento de erros 
+
+sempre prezar em não interromper a execução do código.
+
+usando função die para debug mas nunca usar em ambientes
+de produção.
+
+retorno de flags são uma boa maneira, mas uma maneira simples de
+tratamento de erros para entrar um else e cair em uma mensagem de erro.
+
+Ai tem os tratamentos reais de erros no PHP que são com o
+throw new exception('')
+podendo ser usado em um bloco try catch e serem especificados 
+usando a classe exception como classe mãe de uma subclasse que tratará
+erros especificos.
+exception pode trazer os metodos
+getMessage() - mensagem de erro -> tanto definida no throw new exception quanto tem default.
+getCode() - retorna o código de erro.
+getFile() - retorna o arquivo no qual ocorreu o erro.
+getLine() - renorna a linha na qual ocorreu o erro.
+getTrace() - retorna uma array com as ações até o erro.
+getTraceAsString - retorna as ações em forma de string.
+
+-------------------------------------------------------------------------------
+
+3.2
+Métodos mágicos
+
+-> __set -> sempre que for setar um atributo inacessivel (privado).
+-> __get -> sempre que for chamar um atributo inacessivel (privado).
+-> __isset -> sempre será usado se um isset for colocado para verificar um atributo de um objeto.
+-> __unset -> sempre será usado se um unset for colocado para dar unset um atributo de um objeto.
+-> __toString * -> poderá ser usado para dar print/echo em objeto e nesse método mágico tratar o objeto para uma string como json_encode.
+-> __clone * -> poderá ser usado para clonar um objeto, mas com ponteiros diferentes na memória, para nem e nem outro interferir nos dados.
+-> __call * -> sem que é chamado um método inexistente esse método mágico é invocado.
+
+*-> as que eu achei mais interessantes
+
+-------------------------------------------------------------------------------
+
+3.3
+Manipulação de xml
+
+- Usada para coisas mais simples, como leitura, mudança de valores e criação
+de novas tags xml.
+
+* - para fazer uma mudança e salva-la será necessário usar file_put_contents.
+
+-> simplexml_load_file()
+-> SimpleXMLElement (object)
+    -> asXML
+    -> attributes
+    -> children
+    -> addChild
+
+-------------------------------------------------------------------------------
+
+3.4
+
+Manipulação de XML com DOM
+
+-> DOMdocument / DOMNodeList.
+    -> load - ler documentos (xml/html).
+    -> getElementsByTagName
+    -> getElementById
+    -> getAttribute
+    -> __construct('1.0', "UTF-8") + formatOutput = true - criar documento.
+    -> createElemente -> criar nodo/tag/element.
+    -> appendChild -> cria um elemento/nodo/tag dentro de um mesmo elemento/nodo/tag "pai".
+    -> saveXML -> salva o documento criado.
+
+-------------------------------------------------------------------------------
+
+3.5
+
+SPL
+
+-> Nesse capitulo não são mostrados todos os spls do PHP,
+interessante pesquisar e aprender mais.
+
+-> SplFileInfo e SplFileObject (SplFileInfo é classe mãe de SplFileObject)
+
+SplFileInfo - oferece metodos para consultar informações do arquivo.
+    -> getFileName()
+    -> getExtension()
+    -> getSize()
+    -> getRealPath()
+    -> getType()
+    -> isWritable()
+
+SplFileObject - oferece metodos para maniplução de arquivos.
+    -> fwrite
+    -> eof
+    -> fgets
+    -> setCsvControl
+    -> fputcsv
+
+-> SplStack e SplQueue
+
+SplQueue - Fila
+    -> enqueue - adiciona a fila - FI -> FIRST IN
+    -> dequeue - remove da fila - FO -> FIRST OUT
+
+SplStack - Pilha
+    -> push - adiciona a pilha - LI -> LAST IN
+    -> pop - remove da pilha - FO -> FIRST OUT
+
+Iterators
+DirectoryIterator
+    -> cada item gerado po ser passado por um foreach e 
+    esse itens são objetos SplFileInfo.
+
+ArrayObject
+    -> append - acrescenta valor.
+    -> offsetGet - pegar valor da posição.
+    -> offsetSet - setar ou substituir valor da posição.
+    -> offserUnset - eleminar posição.
+    -> offsetExists - verificar existencia de posição.
+    -> natsort - orderna
+    -> serialize - serializa
+
+-------------------------------------------------------------------------------
+
+3.6
+
+ReflectionClass - pegar informações de class.
+ReflectionMethod - pegar informações de metodos.
+ReflectionProperty - pegar informações de propriedades.
+
+-------------------------------------------------------------------------------
+
+3.7
+
+Traits é algo bem específico e que eu preciso de mais experiência e
+conhecimento para poder aplicar.
+
+É uma alternativa para inserir um método em uma classe, sem colocar na classe mãe,
+isse seria quando usamos herança em classes,
+
+-------------------------------------------------------------------------------
+
+3.8
+
+Injeção de dependência
+
+Serve para ter uma desacoplação maior e não precisar de uma herança ou trait
+no caso podemos criar em um construtor, método e setter ou getter de uma 
+propriedade.
+
+exemplo:
+public function setNome(\PessoaInterface $Pessoa)
+{
+    $this->nome = $Pessoa->nome;
+}
+
+-------------------------------------------------------------------------------
+
+Partes mais relevantes para mim:
+- Injeção de dependência
+- SPL
+- Reflection
+- Tratamento de erros

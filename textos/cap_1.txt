@@ -1,0 +1,97 @@
+PHP_EOL
+-> REPRESENTA UM QUEBRA DE LINHA
+
+---------------------------
+
+Operador Lógico XOR
+-> lembre-se da aula de lógica um ou exclusivo quer dizer que só um pode ser verdadeiro
+ou seja eu não posso ser humano e cachorro ao mesmo tempo.
+
+$a = 1;
+$b = 2;
+
+echo ($a == 1 xor $b == 1) ? 'a' : 'b';
+
+---------------------------
+
+While 
+-> procurar saber onde e quando usar melhor ele.
+
+---------------------------
+
+Váriaveis estáticas
+-> quando e como usar.
+
+---------------------------
+
+&$referencia
+Passar valor por referência
+-> quando e como usar.
+
+---------------------------
+
+estudar melhor sobre recursão em funções
+-> quando e como usar.
+
+---------------------------
+
+prestar atenção em funções para manipulação de arquivos e diretórios
+-> isso pode até dar uma idéia para criar algo.
+
+---------------------------
+
+str_repeat
+-> pode ajudar em algumas ocasiões
+
+---------------------------
+
+strlen
+-> pode ajudar em algumas ocasiões
+
+---------------------------
+
+str_replace 
+-> pode ajudar em algumas ocasiões.
+
+---------------------------
+
+print_r
+-> pode ajudar em algumas horas no debug de código.
+
+---------------------------
+
+array_unshift
+-> adiciona elementos no inicio de uma array.
+
+---------------------------
+
+array_shift 
+-> remove o elemento do inicio de um array.
+
+---------------------------
+
+array_pop 
+-> remove o ultimo elemento de um array.
+
+---------------------------
+
+in_array
+-> pode ajudar em pesquisa de listas ou em algumas verificações.
+
+---------------------------
+
+sort e rsort
+-> organizar um array
+
+---------------------------
+
+asort e arsort
+-> organizar um array mantendo os indices
+
+---------------------------
+
+ksort e krsort
+-> organizar array por indices
+
+---------------------------
+
