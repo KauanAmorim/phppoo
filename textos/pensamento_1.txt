@@ -13,6 +13,13 @@ usar facade para criar libs de libs de terceiros.
 
 usar adapter para uma melhor manutenção do código.
 
+-----------------------------------------------------------------
 
+Verificar Exceções pré-definidas do PHP e ver como e quando usa-las.
 
+-----------------------------------------------------------------
 
+Funcionamento de classe Produto com ProdutoGateway e seu
+funcionamento em exemplo_tdg2.php é bem interessante, rever 
+o funcionamento e pensar em como usar isso nas libs e trabalho
+futuramente.

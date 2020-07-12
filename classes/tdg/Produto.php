@@ -2,6 +2,8 @@
 
 namespace tdg;
 
+use \tdg\ProdutoGateway;
+
 class Produto 
 {
     private static $connection;
@@ -26,13 +28,13 @@ class Produto
     public static function find($id)
     {
         $ProdutoGateway = new ProdutoGateway;
-        return $ProdutoGateway->find($id, 'Produto');
+        return $ProdutoGateway->find($id, '\tdg\Produto');
     }
 
     public static function all($filter = '')
     {
         $ProdutoGateway = new ProdutoGateway;
-        return $ProdutoGateway->all($filter, 'Produto');
+        return $ProdutoGateway->all($filter, '\tdg\Produto');
     }
 
     public function delete()
