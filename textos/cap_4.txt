@@ -12,3 +12,54 @@ banco de dados usam chaves primarias e estrangeiras.
 
 -------------------------------------------------------------------------------
 
+Table Data Gateway
+-> uso de uma classe Principal para a tabela com os nomes iguais com a extensão
+gateway, todos os métodos são normais e recebem nomes de classes para quando 
+regastar o resultado, tranforma-los em um objeto que será criado com o mesmo
+nome da classe sem extensão.
+
+Esse exemplo dá para ver nas classes Produto.php, ProdutoGateway.php,
+exemplo_tdg.php e exemplo_tdg2.php
+
+Table Data Gateway - stateless.
+- Uma class Table Data Gateway é por natureza stateless, ou seja, não mantém o 
+estado de suas propriedade.
+
+-------------------------------------------------------------------------------
+
+Row Data Gateway
+-> É usada para centralizar todos os processor do banco de dados,
+e persistir os dados nos atributos. 
+
+Row Data Gateway
+- Uma uma classe stateful, mantém os valores de suas propriedades
+ao longo do ciclo de vida.
+
+-------------------------------------------------------------------------------
+
+Active Record 
+-> Igual ao Row Data Gateway, centraliza todos os processos no banco de dados 
+e persiste os dados dos atributos, porém nele também há as regras de negócio.
+
+-------------------------------------------------------------------------------
+
+Data Mapper
+-> Entendi o funcionamento, mas não entendi o conceito, pesquisar mais sobre,
+mas ele ajuda nas tranferencias de dados entre classes e objetos para ter
+processos no banco de dados.
+
+-------------------------------------------------------------------------------
+
+Qual é o melhor arquivo para configurações? Ao que parece o JSON pode ser
+uma boa opção, porém pode ficar muito complexo para uma manipulação, o INI
+pode ser uma melhor opção pois ele só fica com uma estrutura simples.
+
+-------------------------------------------------------------------------------
+
+Ver sobre o PDOException.
+Padrão Factory para classe Connection, uma boa para pensar em formas de usar esse
+padão.
+
+-------------------------------------------------------------------------------
+
+

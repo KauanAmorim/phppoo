@@ -9,3 +9,5 @@ CREATE TABLE produto (
     origem char(1)
 );
 
+SELECT * FROM produto;
+DELETE FROM produto;

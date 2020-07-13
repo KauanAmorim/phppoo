@@ -11,7 +11,10 @@
     },
     "autoload": {
         "psr-4": {
-            "tdg\\": "classes/tdg"
+            "tdg\\": "classes/tdg",
+            "rdg\\": "classes/rdg",
+            "ar\\": "classes/ar",
+            "dm\\": "classes/dm"
         }
     }
 }

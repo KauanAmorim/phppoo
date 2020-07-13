@@ -2,18 +2,18 @@
 
 require_once "./vendor/autoload.php";
 
-use \connection\connectdb;
-use \tdg\Produto;
+use \DatabaseConnect\Connect;
+use \ar\Produto;
 
 try {
+    
+    $ConnectionDb = new Connect('./config/config.json', 'phpoo');
+    $Connection = $ConnectionDb->getConnection();
+    Produto::setConnection($Connection);
 
-    $ConnectionDB = new connectdb('./config/config.json', 'phpoo');
-    $connection = $ConnectionDB->getConnection();
-
-    Produto::setConnection($connection);
     $produtos = Produto::all();
-    foreach ($produtos as $produto) {
-        $produto->delete();
+    foreach ($produtos as $Produto) {
+        $Produto->delete();
     }
 
     $p1 = new Produto;
@@ -35,7 +35,7 @@ try {
     $p2->data_cadastro = date('Y-m-d');
     $p2->origem = 'N';
     $p2->save();
- 
+
     $p3 = Produto::find(1);
     print "Descrição: " . $p3->descricao . "<br>\n";
     print "Margem de lucro: " . $p3->getMargemLucro() . "% <br>\n";
@@ -43,6 +43,6 @@ try {
     $p3->save();
 
 } catch (\Exception $Exception) {
-    echo $Exception->getMessage() . "\n<br>";
+    echo $Exception->getMessage() . ' <br>\n';
     var_dump($Exception->getTrace());
 }

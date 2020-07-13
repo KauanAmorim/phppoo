@@ -12,18 +12,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KauanAmorim/database_connect.git",
-                "reference": "3f1b285cd45769d0aa54f746007dcda3210934de"
+                "reference": "feba09589b9bf9db568dddc5bc4c9455667ff0b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KauanAmorim/database_connect/zipball/3f1b285cd45769d0aa54f746007dcda3210934de",
-                "reference": "3f1b285cd45769d0aa54f746007dcda3210934de",
+                "url": "https://api.github.com/repos/KauanAmorim/database_connect/zipball/feba09589b9bf9db568dddc5bc4c9455667ff0b2",
+                "reference": "feba09589b9bf9db568dddc5bc4c9455667ff0b2",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "connection\\": "src/"
+                    "DatabaseConnect\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -37,7 +37,7 @@
                 }
             ],
             "description": "personal lib to connect with database",
-            "time": "2020-07-09T00:16:30+00:00"
+            "time": "2020-07-12T15:26:59+00:00"
         }
     ],
     "packages-dev": [],
