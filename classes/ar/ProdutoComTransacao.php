@@ -2,9 +2,10 @@
 
 namespace ar;
 
-class Produto 
+use \api\Transaction;
+
+class ProdutoComTransacao 
 {
-    private static $Connection;
     private $data;
 
     public function __get($propriedade)
@@ -17,16 +18,12 @@ class Produto
         $this->data[$propriedade] = $value;
     }
 
-    public static function setConnection(\PDO $Connection)
-    {
-        self::$Connection = $Connection;
-    }
-
     public static function find($id)
     {
         $sql = "SELECT * FROM produto WHERE id = '$id'";
         print "$sql <br>\n";
-        $result = self::$Connection->query($sql);
+        $Connection = Transaction::get();
+        $result = $Connection->query($sql);
         return $result->fetchObject(__CLASS__);
     }
 
@@ -35,7 +32,8 @@ class Produto
         $sql = "SELECT * FROM produto ";
         $sql .= ($filter) ? "WHERE $filter": '';
         print "$sql <br>\n";
-        $result = self::$Connection->query($sql);
+        $Connection = Transaction::get();
+        $result = $Connection->query($sql);
         return $result->fetchAll(\PDO::FETCH_CLASS, __CLASS__);
     }
 
@@ -43,14 +41,16 @@ class Produto
     {
         $sql = "DELETE FROM produto WHERE id = '{$this->id}'";
         print "$sql <br>\n";
-        return self::$Connection->query($sql);
+        $Connection = Transaction::get();
+        return $Connection->query($sql);
     }
 
     public function save()
     {
         $sql = (empty($this->data['id'])) ? $this->sqlInsert() : $this->sqlUpdate();
         print "$sql <br>\n";
-        return self::$Connection->query($sql);
+        $Connection = Transaction::get();
+        return $Connection->query($sql);
     }
 
     private function sqlInsert()
@@ -88,7 +88,8 @@ class Produto
     private function getLastId()
     {
         $sql = "SELECT MAX(id) as max FROM produto";
-        $result = self::$Connection->query($sql);
+        $Connection = Transaction::get();
+        $result = $Connection->query($sql);
         $data = $result->fetchObject();
         return $data->max;
     }
@@ -102,5 +103,6 @@ class Produto
     {
         $this->custo = $custo;
         $this->estoque += $quantidade;
-    }    
+    }
+
 }
