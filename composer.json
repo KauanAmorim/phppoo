@@ -14,7 +14,8 @@
             "tdg\\": "classes/tdg",
             "rdg\\": "classes/rdg",
             "ar\\": "classes/ar",
-            "dm\\": "classes/dm"
+            "dm\\": "classes/dm",
+            "api\\": "classes/api"
         }
     }
 }
