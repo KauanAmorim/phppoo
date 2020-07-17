@@ -4,7 +4,7 @@ namespace ar;
 
 use \api\Transaction;
 
-class ProdutoComTransacao 
+class ProdutoComTransacao
 {
     private $data;
 
@@ -48,7 +48,8 @@ class ProdutoComTransacao
     public function save()
     {
         $sql = (empty($this->data['id'])) ? $this->sqlInsert() : $this->sqlUpdate();
-        print "$sql <br>\n";
+        // print "$sql <br>\n";
+        Transaction::log($sql);
         $Connection = Transaction::get();
         return $Connection->query($sql);
     }

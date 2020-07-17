@@ -1,0 +1,15 @@
+2020-07-15 20:35:30 :: Inserindo produto novo
+2020-07-15 20:35:30 :: INSERT INTO produto (
+            id, descricao, estoque, preco_custo,
+            preco_venda, codigo_barras, data_cadastro,
+            origem
+        ) VALUES (
+            '7',
+            'Chocolate Amargo',
+            '80',
+            '4',
+            '7',
+            '68323453234234',
+            '2020-07-15',
+            'N'
+        )

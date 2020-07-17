@@ -7,6 +7,7 @@ use \api\Connection;
 final class Transaction 
 {
     private static $Connection;
+    private static $Logger;
 
     private function __construct(){}
 
@@ -15,7 +16,10 @@ final class Transaction
         if(empty(self::$Connection)){
             self::$Connection = Connection::getConnection($database);
             self::$Connection->beginTransaction();
+            self::$Logger = null;
+            return true;
         }
+        return false;
     }
 
     public static function get()
@@ -38,7 +42,20 @@ final class Transaction
         if(self::$Connection){
             self::$Connection->commit();
             self::$Connection = null;
+            return true;
         }
         return false;
+    }
+
+    public static function setLogger(\api\Logger $Logger)
+    {
+        self::$Logger = $Logger;
+    }
+
+    public static function log($message)
+    {
+        if(self::$Logger){
+            self::$Logger->write($message);
+        }
     }
 }
