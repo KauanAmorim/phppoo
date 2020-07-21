@@ -1,0 +1,3 @@
+2020-07-21 20:17:42 :: Inserindo produto novo
+2020-07-21 20:17:42 :: INSERT INTO produto ( descricao, estoque, preco_custo, preco_venda, codigo_barras, data_cadastro, origem ) VALUES ( 'Cerveja artesanal IPA', 50, 8, 12, '75363453234234', '2020-07-21', 'N' )
+2020-07-21 20:17:42 :: SELECT * FROM produto WHERE id = 23

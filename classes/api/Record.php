@@ -75,28 +75,24 @@ abstract class Record
 
         // verifica se tem ID ou se existe na base de dados
         if(empty($this->data['id']) or (!$this->load($this->id))) {
-            // incrementa o ID
-            if(empty($this->data['id'])){
-                $this->id = $this->getLast() + 1;
-                $prepared['id'] = $this->id;
-            }
-
             $sql = $this->sqlInsert($prepared);
+            $insert = true;
         } else {
             $sql = $this->sqlUpdate($prepared);
+            $insert = false;
         }
 
         if ($Connection = Transaction::get()) {
             // cria mensagem de log e executa a consulta
             Transaction::log($sql);
-            $result = $Connection->query($sql);
+            $stmt = $Connection->prepare($sql);
 
             // se retornou algum dado
-            if ($result) {
+            if ($stmt->execute()) {
                 //retorna os dados em forma de objeto
-                $object = $result->fetchObject(\get_class($this));
+                $id = ($insert) ? $Connection->lastInsertId() : $this->id;
+                return $this->load($id);
             }
-            return $object;
         } else {
             throw new Exception("Não há transação ativa!!");   
         }
@@ -151,20 +147,6 @@ abstract class Record
         $classname = \get_called_class();
         $ar = new $classname;
         return $ar->load($id);
-    }
-
-    private function getLast() 
-    {
-        if($Connection = Transaction::get()) {
-            $sql = "SELECT max(id) FROM {$this->getEntity()}";
-
-            // cria log e executa instrução SQL
-            Transaction::log($sql);
-            $result = $Connection->fetch();
-            return $row[0];
-        } else {
-            throw new Exception("Não há transação ativa!!");   
-        }
     }
 
     public function prepare ($data) 
