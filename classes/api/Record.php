@@ -129,7 +129,7 @@ abstract class Record
 
         // mostra a string de UPDATE
         $sql = "DELETE FROM {$this->getEntity()}";
-        $sql = ' WHERE id =' . (int) $this->data['id']; // livro
+        $sql .= ' WHERE id = ' . (int) $this->data['id']; // livro
         // $sql = ' WHERE id =' . (int) $id;
 
         if ($Connection = Transaction::get()) {

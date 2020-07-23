@@ -1,0 +1,2 @@
+2020-07-22 20:54:55 :: Buscando um produto
+2020-07-22 20:54:55 :: SELECT * FROM produto WHERE id = 7
