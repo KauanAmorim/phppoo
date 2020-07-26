@@ -1,3 +1,11 @@
+
+Reler tópicos de:
+
+data Mapper.
+query object e composite pattern.
+
+---------------------------------------------
+
 Introdução
 
 Os bancos de dados surgiram na década de 1970, 
