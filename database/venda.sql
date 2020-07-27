@@ -15,3 +15,4 @@ CREATE TABLE item_venda (
 
 SELECT * FROM venda;
 SELECT * FROM item_venda;
+

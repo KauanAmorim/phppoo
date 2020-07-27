@@ -1,0 +1,1 @@
+2020-07-27 00:23:15 :: DELETE FROM produto WHERE (descricao like '%GB%'  OR descricao like '%FILMAD%')

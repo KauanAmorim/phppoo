@@ -1,0 +1,4 @@
+2020-07-27 00:14:46 :: SELECT * FROM produto WHERE (preco_venda <= '35'  AND origem = 'N')
+2020-07-27 00:14:46 :: SELECT * FROM produto WHERE id = 32
+2020-07-27 00:14:46 :: UPDATE produto  SET descricao = 'Cerveja artesanal IPA', estoque = '50', preco_custo = '8', preco_venda = 15.6, codigo_barras = '75363453234234', data_cadastro = '2020-07-21', origem = 'N' WHERE id=32
+2020-07-27 00:14:46 :: SELECT * FROM produto WHERE id = 32

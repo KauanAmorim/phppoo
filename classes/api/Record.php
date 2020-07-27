@@ -186,7 +186,7 @@ abstract class Record
     private function sqlUpdate($prepared)
     {
         // monta a string UPDATE
-        $sql = "UPDATE INTO {$this->getEntity()} ";
+        $sql = "UPDATE {$this->getEntity()} ";
         // monta os pares: coluna=valor,...
         if($prepared){
             foreach ($prepared as $column => $value) {
